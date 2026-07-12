@@ -1,350 +1,532 @@
 <!DOCTYPE html>
 <html lang="ht">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Sètifika Anrejistreman SIAVAC</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 
 <style>
 
 *{
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
 }
 
+
 body{
-background:#eee;
+background:#eeeeee;
 padding:15px;
 margin:0;
 }
 
+
 #certificat{
+
 max-width:800px;
 margin:auto;
 background:white;
 padding:25px;
+border:2px solid #0b3d91;
 position:relative;
 overflow:hidden;
-border:2px solid #0b3d91;
+
 }
+
 
 #certificat:before{
+
 content:"";
+
 position:absolute;
+
 top:20%;
 left:20%;
+
 width:60%;
 height:60%;
+
 background:url("https://i.ibb.co/zTz2rrh8/sketch-1782265870898.jpg") center no-repeat;
+
 background-size:contain;
+
 opacity:0.05;
+
 z-index:0;
+
 }
+
+
 
 .content{
+
 position:relative;
 z-index:1;
+
 }
+
+
 
 .logo{
-display:block;
+
 width:120px;
+
+display:block;
+
 margin:auto;
+
 }
 
+
+
 h1{
+
 text-align:center;
+
 font-size:22px;
+
 color:#0b3d91;
+
 }
+
+
 
 h2{
+
 text-align:center;
-font-size:18px;
+
 }
+
+
 
 hr{
+
 border:2px solid #0b3d91;
+
 }
+
+
 
 .box{
+
 border:2px solid #0b3d91;
+
 border-radius:10px;
+
 padding:15px;
+
 }
+
+
 
 label{
+
 font-weight:bold;
+
 display:block;
+
 margin-top:12px;
+
 }
+
+
 
 input,textarea{
+
 width:100%;
+
 padding:10px;
+
 margin-top:5px;
+
 border:1px solid #999;
+
 border-radius:6px;
+
 }
+
+
 
 textarea{
-height:90px;
+
+height:100px;
+
 }
 
-#photo{
-width:200px;
-max-width:100%;
-margin-top:10px;
-border-radius:8px;
-}
+
 
 .qr{
+
 text-align:center;
-margin-top:20px;
+
+margin-top:25px;
+
 }
+
+
 
 .legal{
+
 margin-top:25px;
+
 padding:15px;
+
 border:1px solid #555;
+
 font-size:14px;
+
 line-height:1.5;
+
 }
+
+
 
 button{
+
 width:100%;
+
 padding:14px;
+
 margin-top:15px;
+
 background:#0b3d91;
+
 color:white;
+
 border:none;
+
 border-radius:8px;
+
 font-size:16px;
+
 }
+
+
 
 @media(max-width:600px){
+
 #certificat{
+
 padding:15px;
+
 }
 
+
 h1{
+
 font-size:18px;
+
 }
 
 }
 
 </style>
+
+
 </head>
+
+
 
 <body>
 
+
 <div id="certificat">
+
 
 <div class="content">
 
+
+
 <img class="logo"
+
 crossorigin="anonymous"
+
 src="https://i.ibb.co/zTz2rrh8/sketch-1782265870898.jpg">
+
+
 
 <h1>
 SERVICE INTELLIGENCE<br>
 ANTI-VOL ANTI-CRIME
 </h1>
 
-<h2>SIAVAC</h2>
+
+<h2>
+SIAVAC
+</h2>
+
 
 <hr>
+
 
 <h2>
 SÈTIFIKA ANREJISTREMAN OFISYÈL
 </h2>
 
 
+
 <div class="box">
 
-<label>Nimewo Sètifika</label>
+
+<label>
+Nimewo Sètifika
+</label>
+
 <input id="numero" value="SIAVAC-2026-0001">
 
 
-<label>Dat Emisyon</label>
+
+<label>
+Dat Emisyon
+</label>
+
 <input type="date" id="date">
 
 
-<label>Non Moun / Antite</label>
+
+<label>
+Non Moun / Antite
+</label>
+
 <input id="nom" placeholder="Antre non an">
 
 
-<label>Materyèl oswa Dosye</label>
-<input id="materiel" placeholder="Antre enfòmasyon an">
+
+<label>
+Materyèl oswa Dosye
+</label>
+
+<input id="materiel" placeholder="Egzanp: Telefòn, machin, dokiman">
 
 
-<label>Deskripsyon</label>
+
+<label>
+Deskripsyon
+</label>
+
 <textarea id="description"
-placeholder="Detay sou materyèl oswa dosye a"></textarea>
+placeholder="Ekri detay yo isit la">
+</textarea>
 
 
-<label>Foto Materyèl</label>
-<input type="file" accept="image/*"
-onchange="previewImage(event)">
-
-<img id="photo">
 
 </div>
+
+
 
 
 <div class="qr">
 
-<h3>QR CODE VERIFIKASYON</h3>
+<h3>
+QR CODE VERIFIKASYON
+</h3>
+
 
 <div id="qrcode"></div>
 
+
 </div>
+
+
+
 
 
 <div class="legal">
 
-<h3>AVI LEGAL AK VALIDASYON SIAVAC</h3>
+
+<h3>
+AVI LEGAL AK VALIDASYON SIAVAC
+</h3>
+
 
 <p>
 Dokiman sa a se yon sètifika anrejistreman ofisyèl
 ki soti nan Service Intelligence Anti-Vol Anti-Crime
-(SIAVAC). Li sèvi kòm prèv enfòmasyon ki anrejistre
-nan sistèm SIAVAC la.
+(SIAVAC).
 </p>
 
-<p>
-Nenpòt fo deklarasyon, falsifikasyon, oswa itilizasyon
-ilegal dokiman sa a kapab lakòz mezi legal dapre
-lwa ki an vigè.
-</p>
 
 <p>
-SIAVAC rezève dwa pou verifye enfòmasyon ki sou
-sètifika sa a epi pran tout mezi nesesè kont nenpòt
+Li sèvi kòm prèv enfòmasyon ki anrejistre nan sistèm
+SIAVAC la. Nenpòt fo deklarasyon, falsifikasyon oswa
+itilizasyon ilegal dokiman sa a kapab mennen nan
+mezi legal dapre lwa ki an vigè.
+</p>
+
+
+<p>
+SIAVAC rezève dwa pou verifye tout enfòmasyon ki
+sou sètifika sa a epi pran mezi ki nesesè kont nenpòt
 itilizasyon abizif.
 </p>
 
+
 </div>
+
+
 
 </div>
 
 </div>
+
+
+
+
 <button onclick="generateQR()">
 Kreye QR Code
 </button>
+
 
 <button onclick="downloadPDF()">
 Telechaje PDF
 </button>
 
 
+
+
+
 <script>
-
-function previewImage(event){
-
-let img = document.getElementById("photo");
-
-let file = event.target.files[0];
-
-if(file){
-img.src = URL.createObjectURL(file);
-}
-
-}
-
 
 
 function generateQR(){
 
-let qr = document.getElementById("qrcode");
+
+let qr=document.getElementById("qrcode");
+
 
 qr.innerHTML="";
 
 
-let info =
+
+let info=
+
 "SIAVAC\n"+
-"Certificat: "+
+"Sètifika: "+
 document.getElementById("numero").value+
-"\nNom: "+
+"\nNon: "+
 document.getElementById("nom").value+
-"\nMateriel: "+
+"\nDosye: "+
 document.getElementById("materiel").value+
-"\nDate: "+
+"\nDat: "+
 document.getElementById("date").value;
 
 
+
 new QRCode(qr,{
+
 text:info,
-width:160,
-height:160
+
+width:200,
+
+height:200,
+
+correctLevel:QRCode.CorrectLevel.H
+
 });
 
+
 }
+
 
 
 
 async function downloadPDF(){
 
+
 generateQR();
+
+
+
+await new Promise(resolve=>setTimeout(resolve,1500));
+
 
 
 const element=document.getElementById("certificat");
 
 
-await new Promise(resolve=>setTimeout(resolve,1000));
 
+const canvas=await html2canvas(element,{
 
-const canvas = await html2canvas(element,{
 scale:2,
-useCORS:true,
-allowTaint:false,
-backgroundColor:"#ffffff"
+
+backgroundColor:"#ffffff",
+
+useCORS:true
+
 });
 
 
-const imgData = canvas.toDataURL("image/jpeg",0.95);
+
+const imgData=canvas.toDataURL("image/png");
+
 
 
 const {jsPDF}=window.jspdf;
 
 
+
 const pdf=new jsPDF(
+
 "p",
+
 "mm",
+
 "a4"
+
 );
 
 
-const width=210;
 
-const height=
+let width=210;
+
+
+let height=
+
 canvas.height * width / canvas.width;
 
 
+
 pdf.addImage(
+
 imgData,
-"JPEG",
+
+"PNG",
+
 0,
-10,
+
+5,
+
 width,
+
 height
+
 );
+
 
 
 pdf.save(
+
 "Certificat_SIAVAC.pdf"
+
 );
+
 
 
 }
 
+
 </script>
 
 
+
 </body>
+
 </html>
