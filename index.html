@@ -8,9 +8,7 @@
 <title>Sètifika Anrejistreman SIAVAC</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
 
 <style>
 
@@ -25,9 +23,7 @@ padding:15px;
 background:#eeeeee;
 }
 
-
 #certificat{
-
 max-width:800px;
 margin:auto;
 background:white;
@@ -35,126 +31,95 @@ padding:25px;
 border:2px solid #0b3d91;
 position:relative;
 overflow:hidden;
-
 }
-
 
 #certificat:before{
-
 content:"";
-
 position:absolute;
-
 top:20%;
 left:20%;
-
 width:60%;
 height:60%;
-
 background:url("https://i.ibb.co/zTz2rrh8/sketch-1782265870898.jpg") center no-repeat;
-
 background-size:contain;
-
 opacity:0.05;
-
 z-index:0;
-
 }
-
 
 .content{
-
 position:relative;
 z-index:1;
-
 }
 
-
 .logo{
-
 display:block;
 width:120px;
 margin:auto;
-
 }
 
-
 h1{
-
 text-align:center;
 color:#0b3d91;
 font-size:22px;
-
 }
-
 
 h2{
-
 text-align:center;
-
 }
-
 
 hr{
-
 border:2px solid #0b3d91;
-
 }
 
-
-
 .box{
-
 border:2px solid #0b3d91;
 border-radius:10px;
 padding:15px;
-
 }
 
-
 label{
-
 font-weight:bold;
 display:block;
 margin-top:12px;
-
 }
 
-
-input,textarea{
-
+input{
 width:100%;
 padding:10px;
 margin-top:5px;
 border:1px solid #999;
 border-radius:6px;
 font-size:15px;
-
 }
 
 
-textarea{
+/* DESKRIPSYON LONG */
 
-min-height:100px;
-resize:none;
-overflow:hidden;
-
+.description-box{
+width:100%;
+min-height:150px;
+padding:10px;
+margin-top:5px;
+border:1px solid #999;
+border-radius:6px;
+font-size:15px;
+line-height:1.5;
+white-space:pre-wrap;
+word-wrap:break-word;
+outline:none;
+background:white;
 }
 
 
 .legal{
-
 margin-top:25px;
 padding:15px;
 border:1px solid #555;
 font-size:14px;
 line-height:1.5;
-
 }
 
-
 button{
-
 width:100%;
 padding:14px;
 margin-top:20px;
@@ -163,28 +128,19 @@ color:white;
 border:none;
 border-radius:8px;
 font-size:16px;
-
 }
-
-
 
 @media(max-width:600px){
 
 #certificat{
-
 padding:15px;
-
 }
-
 
 h1{
-
 font-size:18px;
-
 }
 
 }
-
 
 </style>
 
@@ -196,15 +152,11 @@ font-size:18px;
 
 <div id="certificat">
 
-
 <div class="content">
 
 
-
 <img class="logo"
-crossorigin="anonymous"
 src="https://i.ibb.co/zTz2rrh8/sketch-1782265870898.jpg">
-
 
 
 <h1>
@@ -215,9 +167,7 @@ ANTI-VOL ANTI-CRIME
 
 <h2>SIAVAC</h2>
 
-
 <hr>
-
 
 <h2>
 SÈTIFIKA ANREJISTREMAN OFISYÈL
@@ -225,42 +175,32 @@ SÈTIFIKA ANREJISTREMAN OFISYÈL
 
 
 
-
 <div class="box">
 
 
 <label>Nimewo Sètifika</label>
-
-<input id="numero"
-value="SIAVAC-2026-0001">
-
+<input id="numero" value="SIAVAC-2026-0001">
 
 
 <label>Dat Emisyon</label>
-
 <input type="date" id="date">
 
 
-
 <label>Non Moun / Antite</label>
-
-<input id="nom"
-placeholder="Antre non an">
-
+<input id="nom" placeholder="Antre non an">
 
 
 <label>Materyèl oswa Dosye</label>
-
-<input id="materiel"
-placeholder="Antre enfòmasyon an">
-
+<input id="materiel" placeholder="Antre enfòmasyon an">
 
 
 <label>Deskripsyon</label>
 
-<textarea id="description"
-oninput="resizeText(this)"
-placeholder="Ekri detay yo isit la"></textarea>
+<div id="description"
+class="description-box"
+contenteditable="true"
+oninput="resizeText(this)">
+</div>
 
 
 
@@ -269,21 +209,17 @@ placeholder="Ekri detay yo isit la"></textarea>
 
 
 
-
 <div class="legal">
-
 
 <h3>
 AVI LEGAL AK VALIDASYON SIAVAC
 </h3>
-
 
 <p>
 Dokiman sa a se yon sètifika anrejistreman ofisyèl
 ki soti nan Service Intelligence Anti-Vol Anti-Crime
 (SIAVAC).
 </p>
-
 
 <p>
 Li sèvi kòm prèv enfòmasyon ki anrejistre.
@@ -292,30 +228,24 @@ ilegal dokiman sa a kapab mennen nan mezi legal
 dapre lwa ki an vigè.
 </p>
 
-
 <p>
 SIAVAC rezève dwa pou verifye enfòmasyon ki sou
 sètifika sa a epi pran mezi ki nesesè kont nenpòt
 itilizasyon abizif.
 </p>
 
-
 </div>
-
 
 
 </div>
 
 </div>
-
 
 
 
 <button onclick="downloadPDF()">
 Telechaje PDF Sètifika
 </button>
-
-
 
 
 
@@ -332,13 +262,12 @@ el.style.height=el.scrollHeight+"px";
 
 
 
-
 async function downloadPDF(){
 
 
-let textarea=document.getElementById("description");
+let desc=document.getElementById("description");
 
-resizeText(textarea);
+resizeText(desc);
 
 
 document.activeElement.blur();
@@ -347,9 +276,7 @@ document.activeElement.blur();
 await new Promise(resolve=>setTimeout(resolve,800));
 
 
-
 const element=document.getElementById("certificat");
-
 
 
 const canvas=await html2canvas(element,{
@@ -373,9 +300,7 @@ windowHeight:element.scrollHeight
 const imgData=canvas.toDataURL("image/png");
 
 
-
 const {jsPDF}=window.jspdf;
-
 
 
 const pdf=new jsPDF(
@@ -385,12 +310,10 @@ const pdf=new jsPDF(
 );
 
 
-
 let imgWidth=190;
 
 let imgHeight=
 canvas.height * imgWidth / canvas.width;
-
 
 
 if(imgHeight>277){
@@ -403,33 +326,22 @@ canvas.width * imgHeight / canvas.height;
 }
 
 
-
 let x=(210-imgWidth)/2;
 
 
-
 pdf.addImage(
-
 imgData,
-
 "PNG",
-
 x,
-
 10,
-
 imgWidth,
-
 imgHeight
-
 );
-
 
 
 pdf.save(
 "Certificat_SIAVAC.pdf"
 );
-
 
 
 }
