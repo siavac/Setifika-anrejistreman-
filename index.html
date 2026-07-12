@@ -19,7 +19,6 @@ box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
 
-
 body{
 margin:0;
 padding:15px;
@@ -63,7 +62,6 @@ z-index:0;
 }
 
 
-
 .content{
 
 position:relative;
@@ -72,29 +70,22 @@ z-index:1;
 }
 
 
-
 .logo{
 
-width:120px;
-
 display:block;
-
+width:120px;
 margin:auto;
 
 }
 
 
-
 h1{
 
 text-align:center;
-
+color:#0b3d91;
 font-size:22px;
 
-color:#0b3d91;
-
 }
-
 
 
 h2{
@@ -102,7 +93,6 @@ h2{
 text-align:center;
 
 }
-
 
 
 hr{
@@ -116,85 +106,62 @@ border:2px solid #0b3d91;
 .box{
 
 border:2px solid #0b3d91;
-
 border-radius:10px;
-
 padding:15px;
 
 }
-
 
 
 label{
 
 font-weight:bold;
-
 display:block;
-
 margin-top:12px;
 
 }
 
 
-
 input,textarea{
 
 width:100%;
-
 padding:10px;
-
 margin-top:5px;
-
 border:1px solid #999;
-
 border-radius:6px;
-
 font-size:15px;
 
 }
 
 
-
 textarea{
 
-height:100px;
+min-height:100px;
+resize:none;
+overflow:hidden;
 
 }
-
 
 
 .legal{
 
 margin-top:25px;
-
 padding:15px;
-
 border:1px solid #555;
-
 font-size:14px;
-
 line-height:1.5;
 
 }
 
 
-
 button{
 
 width:100%;
-
 padding:14px;
-
 margin-top:20px;
-
 background:#0b3d91;
-
 color:white;
-
 border:none;
-
 border-radius:8px;
-
 font-size:16px;
 
 }
@@ -218,20 +185,20 @@ font-size:18px;
 
 }
 
+
 </style>
 
 </head>
 
 
-
 <body>
-
 
 
 <div id="certificat">
 
 
 <div class="content">
+
 
 
 <img class="logo"
@@ -246,13 +213,10 @@ ANTI-VOL ANTI-CRIME
 </h1>
 
 
-<h2>
-SIAVAC
-</h2>
+<h2>SIAVAC</h2>
 
 
 <hr>
-
 
 
 <h2>
@@ -265,43 +229,37 @@ SÈTIFIKA ANREJISTREMAN OFISYÈL
 <div class="box">
 
 
-<label>
-Nimewo Sètifika
-</label>
+<label>Nimewo Sètifika</label>
 
-<input id="numero" value="SIAVAC-2026-0001">
-
+<input id="numero"
+value="SIAVAC-2026-0001">
 
 
-<label>
-Dat Emisyon
-</label>
+
+<label>Dat Emisyon</label>
 
 <input type="date" id="date">
 
 
 
-<label>
-Non Moun / Antite
-</label>
+<label>Non Moun / Antite</label>
 
-<input id="nom" placeholder="Antre non an">
-
-
-
-<label>
-Materyèl oswa Dosye
-</label>
-
-<input id="materiel" placeholder="Antre enfòmasyon an">
+<input id="nom"
+placeholder="Antre non an">
 
 
 
-<label>
-Deskripsyon
-</label>
+<label>Materyèl oswa Dosye</label>
+
+<input id="materiel"
+placeholder="Antre enfòmasyon an">
+
+
+
+<label>Deskripsyon</label>
 
 <textarea id="description"
+oninput="resizeText(this)"
 placeholder="Ekri detay yo isit la"></textarea>
 
 
@@ -320,7 +278,6 @@ AVI LEGAL AK VALIDASYON SIAVAC
 </h3>
 
 
-
 <p>
 Dokiman sa a se yon sètifika anrejistreman ofisyèl
 ki soti nan Service Intelligence Anti-Vol Anti-Crime
@@ -328,14 +285,12 @@ ki soti nan Service Intelligence Anti-Vol Anti-Crime
 </p>
 
 
-
 <p>
-Li sèvi kòm prèv enfòmasyon ki anrejistre nan
-sistèm SIAVAC la. Nenpòt fo deklarasyon,
-falsifikasyon oswa itilizasyon ilegal dokiman sa a
-kapab mennen nan mezi legal dapre lwa ki an vigè.
+Li sèvi kòm prèv enfòmasyon ki anrejistre.
+Nenpòt fo deklarasyon, falsifikasyon oswa itilizasyon
+ilegal dokiman sa a kapab mennen nan mezi legal
+dapre lwa ki an vigè.
 </p>
-
 
 
 <p>
@@ -343,7 +298,6 @@ SIAVAC rezève dwa pou verifye enfòmasyon ki sou
 sètifika sa a epi pran mezi ki nesesè kont nenpòt
 itilizasyon abizif.
 </p>
-
 
 
 </div>
@@ -358,9 +312,7 @@ itilizasyon abizif.
 
 
 <button onclick="downloadPDF()">
-
 Telechaje PDF Sètifika
-
 </button>
 
 
@@ -370,31 +322,55 @@ Telechaje PDF Sètifika
 <script>
 
 
+function resizeText(el){
+
+el.style.height="auto";
+
+el.style.height=el.scrollHeight+"px";
+
+}
+
+
+
+
 async function downloadPDF(){
 
 
-const element =
-document.getElementById("certificat");
+let textarea=document.getElementById("description");
+
+resizeText(textarea);
+
+
+document.activeElement.blur();
+
+
+await new Promise(resolve=>setTimeout(resolve,800));
 
 
 
-const canvas =
-await html2canvas(element,{
+const element=document.getElementById("certificat");
 
-scale:2,
+
+
+const canvas=await html2canvas(element,{
+
+scale:3,
 
 backgroundColor:"#ffffff",
 
 useCORS:true,
 
-scrollY:0
+logging:false,
+
+windowWidth:element.scrollWidth,
+
+windowHeight:element.scrollHeight
 
 });
 
 
 
-const imgData =
-canvas.toDataURL("image/jpeg",0.95);
+const imgData=canvas.toDataURL("image/png");
 
 
 
@@ -402,8 +378,7 @@ const {jsPDF}=window.jspdf;
 
 
 
-const pdf =
-new jsPDF(
+const pdf=new jsPDF(
 "p",
 "mm",
 "a4"
@@ -411,27 +386,25 @@ new jsPDF(
 
 
 
-let width=190;
+let imgWidth=190;
+
+let imgHeight=
+canvas.height * imgWidth / canvas.width;
 
 
-let height =
-canvas.height * width / canvas.width;
 
+if(imgHeight>277){
 
+imgHeight=277;
 
-if(height > 277){
-
-height=277;
-
-width =
-canvas.width * height / canvas.height;
+imgWidth=
+canvas.width * imgHeight / canvas.height;
 
 }
 
 
 
-let x =
-(210-width)/2;
+let x=(210-imgWidth)/2;
 
 
 
@@ -439,15 +412,15 @@ pdf.addImage(
 
 imgData,
 
-"JPEG",
+"PNG",
 
 x,
 
 10,
 
-width,
+imgWidth,
 
-height
+imgHeight
 
 );
 
@@ -460,6 +433,7 @@ pdf.save(
 
 
 }
+
 
 </script>
 
