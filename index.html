@@ -8,9 +8,7 @@
 <title>Sètifika Anrejistreman Materyèl SIAVAC</title>
 
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
 
 <style>
 
@@ -20,12 +18,10 @@ font-family:Georgia,serif;
 padding:15px;
 }
 
-
 .container{
 max-width:850px;
 margin:auto;
 }
-
 
 .page{
 
@@ -39,57 +35,42 @@ box-shadow:0 0 15px black;
 
 }
 
-
 .logo{
 text-align:center;
 }
-
 
 .logo img{
 width:150px;
 }
 
 
-
 h1{
-
 text-align:center;
 color:#b00000;
 font-size:30px;
-
 }
 
-
 h2{
-
 text-align:center;
 font-size:16px;
-
 }
 
 
 .title{
-
 text-align:center;
 font-size:23px;
 font-weight:bold;
 margin:25px 0;
-
 }
 
 
 hr{
-
 border:2px solid #b00000;
-
 }
 
 
-
 label{
-
 font-weight:bold;
-
 }
 
 
@@ -105,11 +86,8 @@ box-sizing:border-box;
 
 
 textarea{
-
 height:100px;
-
 }
-
 
 
 .box{
@@ -121,26 +99,13 @@ margin:20px 0;
 }
 
 
-
 .footer{
 
 text-align:center;
-margin-top:35px;
+margin-top:60px;
 font-size:14px;
 
 }
-
-
-
-.signature{
-
-display:flex;
-justify-content:space-between;
-margin-top:50px;
-text-align:center;
-
-}
-
 
 
 button{
@@ -155,7 +120,6 @@ border-radius:8px;
 font-size:17px;
 
 }
-
 
 </style>
 
@@ -178,10 +142,7 @@ font-size:17px;
 </div>
 
 
-<h1>
-SIAVAC
-</h1>
-
+<h1>SIAVAC</h1>
 
 <h2>
 SERVICE INTELLIGENCE ANTI-VOL ANTI-CRIME
@@ -189,14 +150,11 @@ SERVICE INTELLIGENCE ANTI-VOL ANTI-CRIME
 
 
 <div class="title">
-
 SÈTIFIKA ANREJISTREMAN MATERYÈL
-
 </div>
 
 
 <hr>
-
 
 
 <div class="box">
@@ -210,9 +168,7 @@ SÈTIFIKA ANREJISTREMAN MATERYÈL
 
 <input type="date">
 
-
 </div>
-
 
 
 
@@ -224,11 +180,9 @@ SÈTIFIKA ANREJISTREMAN MATERYÈL
 <input placeholder="Ekri non materyèl la">
 
 
-
 <label>Kòd / Nimewo Idantifikasyon:</label>
 
 <input placeholder="Ekri nimewo idantifikasyon an">
-
 
 
 <label>Kategori Materyèl:</label>
@@ -236,11 +190,9 @@ SÈTIFIKA ANREJISTREMAN MATERYÈL
 <input placeholder="Egzanp: Ekipman, Dokiman, Aparèy...">
 
 
-
 <label>Kantite:</label>
 
 <input placeholder="Ekri kantite a">
-
 
 
 <label>Eta Materyèl la:</label>
@@ -248,17 +200,14 @@ SÈTIFIKA ANREJISTREMAN MATERYÈL
 <input placeholder="Nouvo, itilize, repare...">
 
 
-
 <label>Kote Materyèl la Plase:</label>
 
 <input placeholder="Ekri kote li ye a">
 
 
-
 <label>Deskripsyon Materyèl la:</label>
 
 <textarea placeholder="Bay detay sou materyèl la..."></textarea>
-
 
 
 <label>Obsèvasyon:</label>
@@ -267,15 +216,12 @@ SÈTIFIKA ANREJISTREMAN MATERYÈL
 
 
 
-
 <h3>RESPONSABLITE</h3>
-
 
 
 <label>Moun ki remèt materyèl la:</label>
 
 <input placeholder="Non konplè">
-
 
 
 <label>Moun ki resevwa materyèl la:</label>
@@ -284,39 +230,15 @@ SÈTIFIKA ANREJISTREMAN MATERYÈL
 
 
 
-
-
-<div class="signature">
-
-
-<div>
-
-____________________<br>
-Ajan ki anrejistre a
-
-</div>
-
-
-
-<div>
-
-____________________<br>
-Validasyon Administratif SIAVAC
-
-</div>
-
-
-</div>
+<hr>
 
 
 
 <div class="footer">
 
-
 <strong>SIAVAC</strong><br>
 
 Service Intelligence Anti-Vol Anti-Crime
-
 
 <br><br>
 
@@ -325,7 +247,6 @@ Service Intelligence Anti-Vol Anti-Crime
 <br>
 
 📞 35379836
-
 
 <br><br>
 
@@ -368,7 +289,6 @@ useCORS:true
 })
 .then(canvas=>{
 
-
 let a=document.createElement("a");
 
 a.download="Setifika_Anrejistreman_Materyel_SIAVAC.png";
@@ -377,16 +297,13 @@ a.href=canvas.toDataURL();
 
 a.click();
 
-
 });
 
 }
 
 
 
-
 function downloadPDF(){
-
 
 const {jsPDF}=window.jspdf;
 
@@ -404,40 +321,26 @@ let img=canvas.toDataURL("image/png");
 
 
 let pdf=new jsPDF(
-
 "portrait",
-
 "in",
-
 [8.5,14]
-
 );
-
 
 
 pdf.addImage(
-
 img,
-
 "PNG",
-
 0,
-
 0,
-
 8.5,
-
 14
-
 );
-
 
 
 pdf.save("Setifika_Anrejistreman_Materyel_SIAVAC.pdf");
 
 
 });
-
 
 }
 
