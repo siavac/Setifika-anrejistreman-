@@ -5,9 +5,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sètifika Anrejistreman SIAVAC</title>
+<title>Sètifika Anrejistreman Materyèl SIAVAC</title>
 
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 
@@ -15,7 +16,7 @@
 
 body{
 background:#111;
-font-family:Georgia, "Times New Roman", serif;
+font-family:Georgia,serif;
 padding:15px;
 }
 
@@ -33,23 +34,19 @@ width:8.5in;
 min-height:14in;
 padding:0.5in;
 box-sizing:border-box;
-box-shadow:0 0 15px black;
 border:8px double #b00000;
+box-shadow:0 0 15px black;
 
 }
 
 
 .logo{
-
 text-align:center;
-
 }
 
 
 .logo img{
-
 width:150px;
-
 }
 
 
@@ -58,7 +55,7 @@ h1{
 
 text-align:center;
 color:#b00000;
-font-size:32px;
+font-size:30px;
 
 }
 
@@ -66,7 +63,7 @@ font-size:32px;
 h2{
 
 text-align:center;
-font-size:18px;
+font-size:16px;
 
 }
 
@@ -74,49 +71,73 @@ font-size:18px;
 .title{
 
 text-align:center;
-font-size:25px;
+font-size:23px;
 font-weight:bold;
-margin:30px 0;
+margin:25px 0;
 
 }
 
 
-
-.text{
-
-font-size:18px;
-line-height:1.8;
-text-align:justify;
-
-}
-
-
-
-.info{
+hr{
 
 border:2px solid #b00000;
-padding:20px;
-margin-top:25px;
-font-size:17px;
 
 }
 
 
-.line{
 
-margin-top:70px;
-display:flex;
-justify-content:space-around;
-text-align:center;
+label{
+
+font-weight:bold;
 
 }
+
+
+input,textarea{
+
+width:100%;
+padding:10px;
+margin:8px 0 15px;
+font-size:15px;
+box-sizing:border-box;
+
+}
+
+
+textarea{
+
+height:100px;
+
+}
+
+
+
+.box{
+
+border:2px solid #b00000;
+padding:15px;
+margin:20px 0;
+
+}
+
 
 
 .footer{
 
+text-align:center;
+margin-top:35px;
+font-size:14px;
+
+}
+
+
+
+.signature{
+
+display:flex;
+justify-content:space-between;
 margin-top:50px;
 text-align:center;
-font-size:15px;
 
 }
 
@@ -131,7 +152,7 @@ background:#b00000;
 color:white;
 border:none;
 border-radius:8px;
-font-size:18px;
+font-size:17px;
 
 }
 
@@ -169,65 +190,25 @@ SERVICE INTELLIGENCE ANTI-VOL ANTI-CRIME
 
 <div class="title">
 
-SÈTIFIKA ANREJISTREMAN
+SÈTIFIKA ANREJISTREMAN MATERYÈL
 
 </div>
 
 
-
-<div class="text">
-
-
-Sa se yon sètifika ofisyèl ki konfime ke:
-
-<br><br>
-
-
-<b>NOM ENTITE / BENEFISYÈ:</b>
-
-<br><br>
-
-____________________________________
-
-
-<br><br>
-
-
-Anrejistre avèk SIAVAC selon enfòmasyon yo bay,
-epi li rekonèt kòm yon dosye ki antre nan sistèm
-anrejistreman entèn òganizasyon an.
-
-
-</div>
+<hr>
 
 
 
-<div class="info">
+<div class="box">
+
+<label>Nimewo Sètifika:</label>
+
+<input placeholder="Ekri nimewo sètifika a">
 
 
-<b>Nimewo Sètifika:</b>
-____________________
+<label>Dat Anrejistreman:</label>
 
-
-<br><br>
-
-
-<b>Dat Anrejistreman:</b>
-____________________
-
-
-<br><br>
-
-
-<b>Kalite Anrejistreman:</b>
-____________________
-
-
-<br><br>
-
-
-<b>Responsab ki valide:</b>
-____________________
+<input type="date">
 
 
 </div>
@@ -235,31 +216,83 @@ ____________________
 
 
 
-<div class="text">
+<h3>ENFÒMASYON SOU MATERYÈL LA</h3>
 
 
-<br>
+<label>Non Materyèl la:</label>
 
-
-Sètifika sa a fèt pou sèvi kòm prèv anrejistreman
-nan kad pwosedi administratif SIAVAC yo.
-
-
-Li pa ranplase okenn otorizasyon legal oswa lisans
-otorite leta mande lè sa aplikab.
-
-
-</div>
+<input placeholder="Ekri non materyèl la">
 
 
 
-<div class="line">
+<label>Kòd / Nimewo Idantifikasyon:</label>
+
+<input placeholder="Ekri nimewo idantifikasyon an">
+
+
+
+<label>Kategori Materyèl:</label>
+
+<input placeholder="Egzanp: Ekipman, Dokiman, Aparèy...">
+
+
+
+<label>Kantite:</label>
+
+<input placeholder="Ekri kantite a">
+
+
+
+<label>Eta Materyèl la:</label>
+
+<input placeholder="Nouvo, itilize, repare...">
+
+
+
+<label>Kote Materyèl la Plase:</label>
+
+<input placeholder="Ekri kote li ye a">
+
+
+
+<label>Deskripsyon Materyèl la:</label>
+
+<textarea placeholder="Bay detay sou materyèl la..."></textarea>
+
+
+
+<label>Obsèvasyon:</label>
+
+<textarea placeholder="Ekri lòt enfòmasyon..."></textarea>
+
+
+
+
+<h3>RESPONSABLITE</h3>
+
+
+
+<label>Moun ki remèt materyèl la:</label>
+
+<input placeholder="Non konplè">
+
+
+
+<label>Moun ki resevwa materyèl la:</label>
+
+<input placeholder="Non konplè">
+
+
+
+
+
+<div class="signature">
 
 
 <div>
 
-_________________<br>
-Responsab SIAVAC
+____________________<br>
+Ajan ki anrejistre a
 
 </div>
 
@@ -267,14 +300,13 @@ Responsab SIAVAC
 
 <div>
 
-_________________<br>
-So Ofisyèl
+____________________<br>
+Validasyon Administratif SIAVAC
 
 </div>
 
 
 </div>
-
 
 
 
@@ -288,7 +320,6 @@ Service Intelligence Anti-Vol Anti-Crime
 
 <br><br>
 
-
 📧 siavacsecurity@gmail.com
 
 <br>
@@ -298,9 +329,7 @@ Service Intelligence Anti-Vol Anti-Crime
 
 <br><br>
 
-
-Direksyon SIAVAC
-
+Dokiman ofisyèl SIAVAC
 
 </div>
 
@@ -313,7 +342,6 @@ Direksyon SIAVAC
 <button onclick="downloadImage()">
 📷 Telechaje an Imaj PNG
 </button>
-
 
 
 <button onclick="downloadPDF()">
@@ -333,15 +361,17 @@ Direksyon SIAVAC
 function downloadImage(){
 
 html2canvas(document.getElementById("certificat"),{
+
 scale:2,
 useCORS:true
+
 })
 .then(canvas=>{
 
 
 let a=document.createElement("a");
 
-a.download="Setifika_Anrejistreman_SIAVAC.png";
+a.download="Setifika_Anrejistreman_Materyel_SIAVAC.png";
 
 a.href=canvas.toDataURL();
 
@@ -362,8 +392,10 @@ const {jsPDF}=window.jspdf;
 
 
 html2canvas(document.getElementById("certificat"),{
+
 scale:2,
 useCORS:true
+
 })
 .then(canvas=>{
 
@@ -372,25 +404,36 @@ let img=canvas.toDataURL("image/png");
 
 
 let pdf=new jsPDF(
+
 "portrait",
+
 "in",
+
 [8.5,14]
+
 );
 
 
 
 pdf.addImage(
+
 img,
+
 "PNG",
+
 0,
+
 0,
+
 8.5,
+
 14
+
 );
 
 
 
-pdf.save("Setifika_Anrejistreman_SIAVAC.pdf");
+pdf.save("Setifika_Anrejistreman_Materyel_SIAVAC.pdf");
 
 
 });
