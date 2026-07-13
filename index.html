@@ -7,140 +7,134 @@
 
 <title>Sètifika Anrejistreman SIAVAC</title>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 
 <style>
 
-*{
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
 body{
-margin:0;
+background:#111;
+font-family:Georgia, "Times New Roman", serif;
 padding:15px;
-background:#eeeeee;
 }
 
-#certificat{
-max-width:800px;
+
+.container{
+max-width:850px;
 margin:auto;
+}
+
+
+.page{
+
 background:white;
-padding:25px;
-border:2px solid #0b3d91;
-position:relative;
-overflow:hidden;
+width:8.5in;
+min-height:14in;
+padding:0.5in;
+box-sizing:border-box;
+box-shadow:0 0 15px black;
+border:8px double #b00000;
+
 }
 
-#certificat:before{
-content:"";
-position:absolute;
-top:20%;
-left:20%;
-width:60%;
-height:60%;
-background:url("https://i.ibb.co/zTz2rrh8/sketch-1782265870898.jpg") center no-repeat;
-background-size:contain;
-opacity:0.05;
-z-index:0;
-}
-
-.content{
-position:relative;
-z-index:1;
-}
 
 .logo{
-display:block;
-width:120px;
-margin:auto;
+
+text-align:center;
+
 }
+
+
+.logo img{
+
+width:150px;
+
+}
+
+
 
 h1{
+
 text-align:center;
-color:#0b3d91;
-font-size:22px;
+color:#b00000;
+font-size:32px;
+
 }
+
 
 h2{
+
 text-align:center;
+font-size:18px;
+
 }
 
-hr{
-border:2px solid #0b3d91;
-}
 
-.box{
-border:2px solid #0b3d91;
-border-radius:10px;
-padding:15px;
-}
+.title{
 
-label{
+text-align:center;
+font-size:25px;
 font-weight:bold;
-display:block;
-margin-top:12px;
-}
+margin:30px 0;
 
-input{
-width:100%;
-padding:10px;
-margin-top:5px;
-border:1px solid #999;
-border-radius:6px;
-font-size:15px;
 }
 
 
-/* DESKRIPSYON LONG */
 
-.description-box{
-width:100%;
-min-height:150px;
-padding:10px;
-margin-top:5px;
-border:1px solid #999;
-border-radius:6px;
-font-size:15px;
-line-height:1.5;
-white-space:pre-wrap;
-word-wrap:break-word;
-outline:none;
-background:white;
+.text{
+
+font-size:18px;
+line-height:1.8;
+text-align:justify;
+
 }
 
 
-.legal{
+
+.info{
+
+border:2px solid #b00000;
+padding:20px;
 margin-top:25px;
-padding:15px;
-border:1px solid #555;
-font-size:14px;
-line-height:1.5;
+font-size:17px;
+
 }
+
+
+.line{
+
+margin-top:70px;
+display:flex;
+justify-content:space-around;
+text-align:center;
+
+}
+
+
+.footer{
+
+margin-top:50px;
+text-align:center;
+font-size:15px;
+
+}
+
+
 
 button{
+
 width:100%;
-padding:14px;
-margin-top:20px;
-background:#0b3d91;
+padding:15px;
+margin-top:15px;
+background:#b00000;
 color:white;
 border:none;
 border-radius:8px;
-font-size:16px;
-}
-
-@media(max-width:600px){
-
-#certificat{
-padding:15px;
-}
-
-h1{
 font-size:18px;
-}
 
 }
+
 
 </style>
 
@@ -150,56 +144,164 @@ font-size:18px;
 <body>
 
 
-<div id="certificat">
-
-<div class="content">
+<div class="container">
 
 
-<img class="logo"
-src="https://i.ibb.co/zTz2rrh8/sketch-1782265870898.jpg">
+<div class="page" id="certificat">
+
+
+<div class="logo">
+
+<img src="https://i.ibb.co/zTz2rrh8/sketch-1782265870898.jpg">
+
+</div>
 
 
 <h1>
-SERVICE INTELLIGENCE<br>
-ANTI-VOL ANTI-CRIME
+SIAVAC
 </h1>
 
 
-<h2>SIAVAC</h2>
-
-<hr>
-
 <h2>
-SÈTIFIKA ANREJISTREMAN OFISYÈL
+SERVICE INTELLIGENCE ANTI-VOL ANTI-CRIME
 </h2>
 
 
+<div class="title">
 
-<div class="box">
+SÈTIFIKA ANREJISTREMAN
 
-
-<label>Nimewo Sètifika</label>
-<input id="numero" value="SIAVAC-2026-0001">
-
-
-<label>Dat Emisyon</label>
-<input type="date" id="date">
+</div>
 
 
-<label>Non Moun / Antite</label>
-<input id="nom" placeholder="Antre non an">
+
+<div class="text">
 
 
-<label>Materyèl oswa Dosye</label>
-<input id="materiel" placeholder="Antre enfòmasyon an">
+Sa se yon sètifika ofisyèl ki konfime ke:
+
+<br><br>
 
 
-<label>Deskripsyon</label>
+<b>NOM ENTITE / BENEFISYÈ:</b>
 
-<div id="description"
-class="description-box"
-contenteditable="true"
-oninput="resizeText(this)">
+<br><br>
+
+____________________________________
+
+
+<br><br>
+
+
+Anrejistre avèk SIAVAC selon enfòmasyon yo bay,
+epi li rekonèt kòm yon dosye ki antre nan sistèm
+anrejistreman entèn òganizasyon an.
+
+
+</div>
+
+
+
+<div class="info">
+
+
+<b>Nimewo Sètifika:</b>
+____________________
+
+
+<br><br>
+
+
+<b>Dat Anrejistreman:</b>
+____________________
+
+
+<br><br>
+
+
+<b>Kalite Anrejistreman:</b>
+____________________
+
+
+<br><br>
+
+
+<b>Responsab ki valide:</b>
+____________________
+
+
+</div>
+
+
+
+
+<div class="text">
+
+
+<br>
+
+
+Sètifika sa a fèt pou sèvi kòm prèv anrejistreman
+nan kad pwosedi administratif SIAVAC yo.
+
+
+Li pa ranplase okenn otorizasyon legal oswa lisans
+otorite leta mande lè sa aplikab.
+
+
+</div>
+
+
+
+<div class="line">
+
+
+<div>
+
+_________________<br>
+Responsab SIAVAC
+
+</div>
+
+
+
+<div>
+
+_________________<br>
+So Ofisyèl
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="footer">
+
+
+<strong>SIAVAC</strong><br>
+
+Service Intelligence Anti-Vol Anti-Crime
+
+
+<br><br>
+
+
+📧 siavacsecurity@gmail.com
+
+<br>
+
+📞 35379836
+
+
+<br><br>
+
+
+Direksyon SIAVAC
+
+
 </div>
 
 
@@ -208,140 +310,90 @@ oninput="resizeText(this)">
 
 
 
-
-<div class="legal">
-
-<h3>
-AVI LEGAL AK VALIDASYON SIAVAC
-</h3>
-
-<p>
-Dokiman sa a se yon sètifika anrejistreman ofisyèl
-ki soti nan Service Intelligence Anti-Vol Anti-Crime
-(SIAVAC).
-</p>
-
-<p>
-Li sèvi kòm prèv enfòmasyon ki anrejistre.
-Nenpòt fo deklarasyon, falsifikasyon oswa itilizasyon
-ilegal dokiman sa a kapab mennen nan mezi legal
-dapre lwa ki an vigè.
-</p>
-
-<p>
-SIAVAC rezève dwa pou verifye enfòmasyon ki sou
-sètifika sa a epi pran mezi ki nesesè kont nenpòt
-itilizasyon abizif.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
+<button onclick="downloadImage()">
+📷 Telechaje an Imaj PNG
+</button>
 
 
 
 <button onclick="downloadPDF()">
-Telechaje PDF Sètifika
+📄 Telechaje PDF Legal 8.5x14
 </button>
+
+
+
+</div>
+
 
 
 
 <script>
 
 
-function resizeText(el){
+function downloadImage(){
 
-el.style.height="auto";
+html2canvas(document.getElementById("certificat"),{
+scale:2,
+useCORS:true
+})
+.then(canvas=>{
 
-el.style.height=el.scrollHeight+"px";
+
+let a=document.createElement("a");
+
+a.download="Setifika_Anrejistreman_SIAVAC.png";
+
+a.href=canvas.toDataURL();
+
+a.click();
+
+
+});
 
 }
 
 
 
-async function downloadPDF(){
 
-
-let desc=document.getElementById("description");
-
-resizeText(desc);
-
-
-document.activeElement.blur();
-
-
-await new Promise(resolve=>setTimeout(resolve,800));
-
-
-const element=document.getElementById("certificat");
-
-
-const canvas=await html2canvas(element,{
-
-scale:3,
-
-backgroundColor:"#ffffff",
-
-useCORS:true,
-
-logging:false,
-
-windowWidth:element.scrollWidth,
-
-windowHeight:element.scrollHeight
-
-});
-
-
-
-const imgData=canvas.toDataURL("image/png");
+function downloadPDF(){
 
 
 const {jsPDF}=window.jspdf;
 
 
-const pdf=new jsPDF(
-"p",
-"mm",
-"a4"
+html2canvas(document.getElementById("certificat"),{
+scale:2,
+useCORS:true
+})
+.then(canvas=>{
+
+
+let img=canvas.toDataURL("image/png");
+
+
+let pdf=new jsPDF(
+"portrait",
+"in",
+[8.5,14]
 );
 
-
-let imgWidth=190;
-
-let imgHeight=
-canvas.height * imgWidth / canvas.width;
-
-
-if(imgHeight>277){
-
-imgHeight=277;
-
-imgWidth=
-canvas.width * imgHeight / canvas.height;
-
-}
-
-
-let x=(210-imgWidth)/2;
 
 
 pdf.addImage(
-imgData,
+img,
 "PNG",
-x,
-10,
-imgWidth,
-imgHeight
+0,
+0,
+8.5,
+14
 );
 
 
-pdf.save(
-"Certificat_SIAVAC.pdf"
-);
+
+pdf.save("Setifika_Anrejistreman_SIAVAC.pdf");
+
+
+});
 
 
 }
